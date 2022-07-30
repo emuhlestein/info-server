@@ -1,5 +1,5 @@
 # FROM <repo name>:<tag>
-FROM openjdk:11-alpine-jdk
+FROM openjdk:8-jdk-alpine
 
 MAINTAINER Ed Muhlestein
 
