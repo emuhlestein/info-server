@@ -19,10 +19,10 @@ pipeline { /* declarative pipeline */
                 // bat for windows, sh for linux
                 // bat 'npm install'
                 // bat 'npm build'
-                // nginx-web-server is the docker context
+                // nginx is the docker context
                 echo 'Building the application'
                 script {
-                    bat 'docker build --platform linux/arm/v7 -t nginx-server2 -f nginx-web-server/Dockerfile .'
+                    bat 'docker build --platform linux/arm/v7 -t nginx-server2 -f nginx/Dockerfile .'
                 }
             }
         }
