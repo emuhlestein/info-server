@@ -1,0 +1,34 @@
+pipeline { /* declarative pipeline */
+    // agent { label "windows" }
+    // more relevant for Jenkins cluster, where there are windows and/or linux nodes
+    agent any // where to build, run on next available agent
+    stages {
+//         stage("Pre Build") {
+//             steps {
+//                 bat 'docker --version'
+//                 bat 'cd'
+//             }
+//         }
+        stage("build authenticator docker image") {
+            steps {
+                // example
+                // bat for windows, sh for linux
+                // bat 'npm install'
+                // bat 'npm build'
+                // authenticator is the docker context
+                echo 'Building the application'
+                script {
+                    bat 'docker build --platform linux/arm/v7 -t authenticator -f authenticator/Dockerfile .'
+                }
+            }
+        }
+        stage("deploy nginx docker image") {
+            steps {
+                bat 'docker save -o /tmp/authenticator.tar authenticator'
+                bat 'scp /tmp/authenticator.tar edm@192.168.1.101:/home/edm/webserver'
+//                 bat 'echo deploy > /tmp/deploy2server'
+//                 bat 'scp nginx-web-server/Dockerfile edm@192.168.1.101:/home/edm/webserver'
+            }
+        }
+    }
+}
