@@ -9,6 +9,9 @@ pipeline { /* declarative pipeline */
 //                 bat 'cd'
 //             }
 //         }
+        stage('Build') {
+            bat 'mvn clean package'
+        }
         stage("build authenticator docker image") {
             steps {
                 // example
