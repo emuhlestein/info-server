@@ -25,6 +25,7 @@ pipeline { /* declarative pipeline */
                 // authenticator is the docker context
                 echo 'Building the docker image'
                 script {
+                    bat 'cd'
                     bat 'docker build --platform linux/arm/v7 -t authenticator -f authenticator/Dockerfile .'
                 }
             }
