@@ -11,4 +11,4 @@ WORKDIR /usr/local/bin/
 # can just do this
 COPY ./authenticator/target/authenticator.jar authenticator.jar
 
-ENTRYPOINT ["java","-jar","/authenticator.jar"]
+ENTRYPOINT ["java","-jar","authenticator.jar"]
