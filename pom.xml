@@ -18,7 +18,6 @@
 	<name>info-server</name>
 	<modules>
 		<module>authenticator</module>
-		<module>nginx</module>
 	</modules>
 
 	<description>info-server</description>
