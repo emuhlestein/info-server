@@ -29,7 +29,7 @@ pipeline { /* declarative pipeline */
                 }
             }
         }
-        stage("deploy nginx docker image") {
+        stage("deploy authenticator docker image") {
             steps {
                 bat 'docker save -o /tmp/authenticator.tar authenticator'
                 bat 'scp /tmp/authenticator.tar edm@192.168.1.101:/home/edm/webserver'
