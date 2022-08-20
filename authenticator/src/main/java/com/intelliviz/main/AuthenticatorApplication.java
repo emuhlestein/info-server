@@ -13,7 +13,7 @@ public class AuthenticatorApplication {
         SpringApplication.run(AuthenticatorApplication.class, args);
     }
 
-    @GetMapping("/")
+    @GetMapping("/hello")
     public String getHelloString() {
         return "Hello from Spring Boot";
     }
