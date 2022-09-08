@@ -2,7 +2,7 @@
 #FROM ubuntu
 #RUN apt-get -y update
 #RUN apt-get -y update && apt-get -y install nginx
-FROM nginx:latest
+FROM nginx
 RUN rm /etc/nginx/nginx.conf /etc/nginx/conf.d/default.conf
 RUN rm /var/log/nginx/access.log
 RUN rm /var/log/nginx/error.log
